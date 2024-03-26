@@ -13,11 +13,9 @@
     <script src="../static/js/particles.js" defer></script>
     <script src="../static/js/typingEffect.js"></script>
 {% endblock %}
-
 {% block title %}
     Home
 {% endblock %}
-
 {% block main %}
     <!-- Particles Background -->
     <div id="particles-js" class="background position-fixed w-100 h-100 top-0 start-0"></div>
@@ -33,8 +31,9 @@
                 <h2 class="main-text">你好!<br> 我是 <span class="name">ACE</span></h2>
                 <p class="secondary-text">I am a <span id="typing-text"></span></p>
                 <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start">
+                  </body>
                     <form action="/generate" method="post" class="mb-3">
-                        <textarea name="prompt" placeholder="請輸入回答:" class="form-control"></textarea>
+                        <textarea name="prompt" placeholder="請輸入回答:"></textarea>
                         <button type="submit" class="btn btn-primary mt-2">Generate</button>
                     </form>
                     {% if response %}
@@ -42,7 +41,7 @@
                         <p>{{ response }}</p>
                     </div>
                     {% endif %}
-                </div>
+                  </body>
                 <button class="btn btn-secondary mt-3">
                     <a href="{{ url_for('about') }}" class="text-white text-decoration-none"> READ MORE <i class="bx bx-right-arrow-circle ms-2"></i></a>
                 </button>
