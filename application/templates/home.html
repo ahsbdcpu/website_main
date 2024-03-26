@@ -23,43 +23,41 @@
     <div id="particles-js" class="background position-fixed w-100 h-100 top-0 start-0"></div>
     <!-- End of Particles Background -->
     <!-- Main Content -->
-    <div class="container description mb-5 pb-5">
-        <!-- Row -->
-        <div class="row align-items-center justify-content-center">
-            <!-- 1st Column -->
-            <div class="col-md-6 order-0 order-md-0 order-1 order-sm-0 text-center text-md-start mb-3 mb-md-0 pb-3">
-                <div class="description-box">
-                    <h2 class="main-text">你好!<br> 我是 <span class="name">ACE</span></h2>
-                    <p class="secondary-text">I am a <span id="typing-text"></span></p>
-                    <div class="d-flex justify-content-center justify-content-sm-start">
-                        <body>
-                            <form action="/generate" method="post">
-                              <textarea name="prompt" placeholder="請輸入回答:"></textarea>
-                              
-                                <button type="submit">Generate</button>
-                            </form>
-                            {% if response %}
-                            <div>
-                               <p>{{ response }}</p>
-                            </div>
-                            {% endif %}
-                        </body>
-                        <button class="btn d-flex align-items-center justify-content-center" type="button">
-                            <a href="{{ url_for('about') }}"> READ MORE <i class="bx bx-right-arrow-circle px-5"></i></a>
-                        </button>
+    <!-- Inside the main content block -->
+<div class="container description mb-5 pb-5">
+    <!-- Row -->
+    <div class="row align-items-center justify-content-center">
+        <!-- 1st Column -->
+        <div class="col-md-6 order-0 order-md-0 order-1 order-sm-0 text-center text-md-start mb-3 mb-md-0 pb-3">
+            <div class="description-box">
+                <h2 class="main-text">你好!<br> 我是 <span class="name">ACE</span></h2>
+                <p class="secondary-text">I am a <span id="typing-text"></span></p>
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start">
+                    <form action="/generate" method="post" class="mb-3">
+                        <textarea name="prompt" placeholder="請輸入回答:" class="form-control"></textarea>
+                        <button type="submit" class="btn btn-primary mt-2">Generate</button>
+                    </form>
+                    {% if response %}
+                    <div>
+                        <p>{{ response }}</p>
                     </div>
+                    {% endif %}
                 </div>
+                <button class="btn btn-secondary mt-3">
+                    <a href="{{ url_for('about') }}" class="text-white text-decoration-none"> READ MORE <i class="bx bx-right-arrow-circle ms-2"></i></a>
+                </button>
             </div>
-            <!-- End of 1st Column -->
-            <!-- 2nd Column -->
-            <div class="col-md-6 order-1 order-md-1 order-0 order-sm-1 text-center text-md-end">
-                <div class="card-design description-image d-flex justify-content-center align-items-center overflow-hidden">
-                    <img class="img-fluid w-75 h-75 object-fit-contain" src="../static/images/unnamed.jpg">
-                </div>
-            </div>
-            <!-- End of 2nd Column -->
         </div>
-        <!-- End of Row -->
+        <!-- End of 1st Column -->
+        <!-- 2nd Column -->
+        <div class="col-md-6 order-1 order-md-1 order-0 order-sm-1 text-center text-md-end">
+            <div class="card-design description-image d-flex justify-content-center align-items-center overflow-hidden">
+                <img class="img-fluid w-75 h-75 object-fit-contain" src="../static/images/unnamed.jpg">
+            </div>
+        </div>
+        <!-- End of 2nd Column -->
     </div>
-    <!-- End of Main Content -->
+    <!-- End of Row -->
+</div>
+<!-- End of Main Content -->
 {% endblock %}
